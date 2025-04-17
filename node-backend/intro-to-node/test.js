@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 // reading a file using the node fs module
 const readPackageJson = async () => {
   const pJsonPath = new URL("./package.json", import.meta.url).pathname;
-  let file = await fs.readFile(pJsonPath);
+  let file = await fs.readFile(pJsonPath, "utf-8");
   file = JSON.parse(file);
   console.log(file);
 };
@@ -17,4 +17,4 @@ const writeFile = async () => {
   await fs.writeFile(newFilePath, `console.log("yoo!")`);
 };
 
-writeFile();
+// writeFile();
