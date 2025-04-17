@@ -4,7 +4,7 @@
   "description": "Main Instructors Repo : https://github.com/Hendrixer/intro-node-v3",
   "main": "index.js",
   "bin": {
-    "noter": "./index.js"
+    "note": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

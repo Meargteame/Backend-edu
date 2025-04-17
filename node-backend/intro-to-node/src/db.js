@@ -2,9 +2,12 @@ import fs from "node:fs/promises";
 
 const DB_PATH = new URL("../db.json", import.meta.url).pathname;
 
+console.log(DB_PATH);
+
 // get all the database
 export const getDb = async () => {
-  const db = await fs.readFile(DB_PATH, "utf-8");
+  const filePath = new URL("../db.json", import.meta.url).pathname;
+  const db = await fs.readFile(filePath, "utf-8");
   return JSON.parse(db);
 };
 // get new note database and rewrite the database before
@@ -18,6 +21,6 @@ export const saveDB = async (db) => {
 export const insertDB = async (note) => {
   const db = await getDb();
   db.notes.push(note);
-  db.saveDB(db);
+  saveDB(db);
   return note;
 };
