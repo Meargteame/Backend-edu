@@ -8,4 +8,13 @@ const readPackageJson = async () => {
   console.log(file);
 };
 
-readPackageJson();
+// readPackageJson();
+
+// Writing to a file with the node fs module
+
+const writeFile = async () => {
+  const newFilePath = new URL("./demo.js", import.meta.url).pathname;
+  await fs.writeFile(newFilePath, `console.log("yoo!")`);
+};
+
+writeFile();
