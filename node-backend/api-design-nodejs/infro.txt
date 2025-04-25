@@ -1,0 +1,6 @@
+External DataBase URL 
+
+
+To initialize Prisma
+
+npx prisma init 
