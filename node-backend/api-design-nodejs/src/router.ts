@@ -1,10 +1,12 @@
 import { Router } from 'express';
 const router = Router();
 
-/**
+/**  
  * Product staff
  */
-router.get('/product', () => { })
+router.get('/product', (req,res) => { 
+    res.json({message:"Hello from the router"})
+})
 router.get('/product/:id',()=>{})
 router.put('/product',()=>{})
 router.get('/product',()=>{})
@@ -32,3 +34,7 @@ router.get('/updatepoint/:id',()=>{})
 router.put('/updatepoint',()=>{})
 router.get('/updatepoint',()=>{})
 router.delete('/updatepoint/:id',()=>{})
+
+
+
+export default router
