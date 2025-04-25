@@ -5,7 +5,7 @@ const router = Router();
  * Product staff
  */
 router.get('/product', (req,res) => { 
-    res.json({message:"Hello from the router"})
+    res.json({message:'message'})
 })
 router.get('/product/:id',()=>{})
 router.put('/product',()=>{})
