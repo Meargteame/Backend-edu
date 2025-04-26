@@ -179,7 +179,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../../../prisma",
@@ -189,12 +189,11 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": null
+        "value": "postgresql://api_design_d2zo_user:ussOgNJciJKrt7hrmxh0GGMtYqELdNhg@dpg-d05kj8buibrs73fpqf60-a.oregon-postgres.render.com/api_design_d2zo"
       }
     }
   },
