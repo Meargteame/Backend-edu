@@ -1,6 +1,6 @@
 import { data } from "react-router-dom";
 import prisma from "../db";
-import { createJWT, hashPassword } from "../modules/auth/auth";
+import { comparePasswords, createJWT, hashPassword } from "../modules/auth/auth";
 
 
 
@@ -18,6 +18,17 @@ export const createNewUser = async(req,res) => {
 } 
 
 // authenticating the user 
-export const signin = (req, res) => {
-    
+export const signin =async (req, res) => {
+    const user = await prisma.user.findUnique({
+        where: {
+            username:req.body.username
+        }
+    })
+
+    const isValid = await comparePasswords(req.body.password, user.password);
+
+    if (!isValid) {
+        res.status(401);
+        res.json( {message:"nope"})
+    }
 }
